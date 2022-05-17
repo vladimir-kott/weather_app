@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react"
 
 function App() {
+
+  const [data, setData] = useState({})
+  const serverApi = "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=3ab1bc3bedbda414055089f8e7b94579"
+
+  async function getData() {
+    const response = await fetch(serverApi, {
+      method: 'GET'
+    })
+
+    let result = await response.json()
+
+    if (response.ok){
+      console.log('data is loaded ', result)
+    }
+    else {
+      console.log('error: ', result.message)
+     }
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
     </div>
   );
 }
