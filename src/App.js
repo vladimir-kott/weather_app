@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react"
+import configFile from "./config.json";
 
 function App() {
 
   const [city, setCity] = useState('Kyiv')
   const [data, setData] = useState()
   const [error, setError] = useState()
-  const serverApi = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${city}&appid=3ab1bc3bedbda414055089f8e7b94579`
+  const serverApi = configFile.apiEndpoint + `units=metric&q=${city}&appid=${0}`
 
   async function getData() {
 
