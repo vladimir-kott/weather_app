@@ -6,7 +6,9 @@ function App() {
   const [city, setCity] = useState('Kyiv')
   const [data, setData] = useState()
   const [error, setError] = useState()
-  const serverApi = configFile.apiEndpoint + `units=metric&q=${city}&appid=${0}`
+  const serverApi = configFile.apiEndpoint + `units=metric&q=${city}&lang=ru&appid=${process.env.REACT_APP_WEATHER_KEY}`
+
+  console.log('serverApi', serverApi)
 
   async function getData() {
 
@@ -54,17 +56,17 @@ function App() {
         >
           Поиск
         </button>
-        <p>Погода в: {data.name}</p>
-        <p>Температура воздуха: {Math.round(data.main.temp)}</p>
-        <p>Ощущается как: {Math.round(data.main.feels_like)}</p>
+        <p>Погода в населенном пункте: {data.name}</p>
+        <p>Температура воздуха: {Math.round(data.main.temp)}С°</p>
+        <p>Ощущается как: {Math.round(data.main.feels_like)}С°</p>
         <p>Погода: {data.weather[0].main} ({data.weather[0].description})</p>
         <p>Иконка: {data.weather[0].icon}</p>
-        <p>Минимальная температура сегодня: {data.main.temp_min}</p>
-        <p>Максимальная температура сегодня: {data.main.temp_max}</p>
+        <p>Минимальная температура сегодня: {Math.round(data.main.temp_min)}С°</p>
+        <p>Максимальная температура сегодня: {Math.round(data.main.temp_max)}С°</p>
         <div>
-          <p>Направление ветра: {data.wind.deg}</p>
-          <p>Порыв ветра: {data.wind.gust}</p>
-          <p>Скорость ветра: {data.wind.speed}</p>
+          <p>Направление ветра: {data.wind.deg}°</p>
+          <p>Порыв ветра: ~{Math.round(data.wind.gust)} мс/с</p>
+          <p>Скорость ветра: ~{data.wind.speed.toFixed(1)} мс/с</p>
         </div>
         </>):("Loading...")}
     </div>
