@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import configFile from "../config.json";
+import setNameSVG from "../utils/imageChanger";
 
 const Main = ({city, setCity, data, getData}) => {
 
-  //console.log(props)
+  const [currentImg, setCurrentImg] = useState()
 
   const handleChange = (event) => {
     setCity(event.target.value)
@@ -12,7 +13,12 @@ const Main = ({city, setCity, data, getData}) => {
   const handleClick = (event) => {
     event.preventDefault() 
     getData()
+    setCurrentImg (setNameSVG(data.weather[0].icon))
   }
+
+  useEffect(() => {
+    setCurrentImg (setNameSVG(data.weather[0].icon))
+  }, [])
 
   return (
       <main className="container mx-auto flex justify-center">
@@ -67,7 +73,7 @@ const Main = ({city, setCity, data, getData}) => {
                         </p>
                       </div>
                       <div className="flex-none flex items-center justify-center w-9 h-9">
-                        <img src={`/animated/day.svg`} width="50" height="50" alt="SVG animation"/>
+                        <img src={`/animated/${currentImg}.svg`} width="50" height="50" alt="SVG animation"/>
                       </div>
                     </div>
                     <p className="text-sm text-slate-700">

@@ -1,12 +1,16 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import LogoAnimated from '../components/elements/logoAnimated'
 import { Linkedin, Instagram, Github } from 'react-bootstrap-icons';
 
 
 const NavMenu = (icon) => {
 
-    //const { dataIcon } = useMain();
-    //console.log(icon)
+    const [mobileMenu, setMobileMenu] = useState(false)
+
+    const handleClick = (event) => {
+        event.preventDefault() 
+        setMobileMenu(!mobileMenu)
+      }
 
     useEffect(() => {
        // console.log('props from navMenu', dataIcon)
@@ -20,12 +24,14 @@ const NavMenu = (icon) => {
             </div>
 
             <div className="block lg:hidden">
-                <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+                <button 
+                onClick={handleClick}
+                className="flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-100 hover:border-gray-200">
                     <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
                 </button>
             </div>
 
-            <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${mobileMenu ? 'md:hidden': ''}`}>
                 <div className="text-sm lg:flex-grow">
                 <a href="https://www.linkedin.com/in/vladimir-kott-511268208/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100 mr-4">
                     <Linkedin size={20}/>
