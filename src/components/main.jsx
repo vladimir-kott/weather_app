@@ -42,8 +42,8 @@ const Main = ({city, setCity, data, getData}) => {
                   </button>
                 </div>
                 
-               <div className="flex font-sans bg-[#fefce8] shadow-md rounded-md border-1">
-                  <div className="flex-none w-24 relative ">
+               <div className="flex font-sans bg-[#fefce8] shadow-md rounded-md border-1 mx-1">
+                  <div className="flex-none w-24 relative sx:hidden st:hidden sm:block">
                     <img src={`${configFile.apiImg + `${data.weather[0].icon}@2x.png`}`} className="absolute object-cover pt-8"></img>
                   </div>
                   <div className="flex-auto p-6">

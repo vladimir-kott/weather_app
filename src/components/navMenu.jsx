@@ -5,11 +5,12 @@ import { Linkedin, Instagram, Github } from 'react-bootstrap-icons';
 
 const NavMenu = (icon) => {
 
-    const [mobileMenu, setMobileMenu] = useState(false)
+    const [mobileMenu, setMobileMenu] = useState(true)
 
     const handleClick = (event) => {
         event.preventDefault() 
         setMobileMenu(!mobileMenu)
+        console.log(mobileMenu)
       }
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const NavMenu = (icon) => {
     }, [])
 
     return (
-        <nav className="flex items-center justify-between flex-wrap p-3 bg-slate-300">
+        <nav className="flex items-center justify-between flex-wrap p-3 bg-slate-300 shadow-md">
             <div className="flex items-center flex-shrink-0 mr-6 text-white">
                 <LogoAnimated icon={icon}/>
                 <span className="font-semibold text-xl">Weather API</span>
@@ -31,7 +32,7 @@ const NavMenu = (icon) => {
                 </button>
             </div>
 
-            <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${mobileMenu ? 'md:hidden': ''}`}>
+            <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${mobileMenu ? 'md:hidden sm:hidden st:hidden sx:hidden': ''}`}>
                 <div className="text-sm lg:flex-grow">
                 <a href="https://www.linkedin.com/in/vladimir-kott-511268208/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100 mr-4">
                     <Linkedin size={20}/>
