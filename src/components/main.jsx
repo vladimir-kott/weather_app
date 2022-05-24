@@ -37,7 +37,7 @@ const Main = ({city, setCity, data, getData}) => {
                 </div>
                 
                <div className="flex font-sans bg-[#fefce8] shadow-md rounded-md border-1">
-                  <div className="flex-none w-24 relative">
+                  <div className="flex-none w-24 relative ">
                     <img src={`${configFile.apiImg + `${data.weather[0].icon}@2x.png`}`} className="absolute object-cover pt-8"></img>
                   </div>
                   <div className="flex-auto p-6">
@@ -50,8 +50,8 @@ const Main = ({city, setCity, data, getData}) => {
                         <p>Температура воздуха: {Math.round(data.main.temp)}С°</p>
                       </div>
                     </div>
-                    <div className="flex items-baseline mt-4 mb-6 pb-4 border-b border-slate-200">
-                      <div className="space-x-2 flex text-sm">
+                    <div className="flex mt-4 mb-6 pb-4 border-b border-slate-200">
+                      <div className="space-y-2 text-sm flex-col">
                         <p className="px-4 font-semibold rounded-md bg-[#06b6d4] text-white">
                           Минимальная температура сегодня: {Math.round(data.main.temp_min)}С°
                         </p>
@@ -66,11 +66,9 @@ const Main = ({city, setCity, data, getData}) => {
                           Ощущается как: {Math.round(data.main.feels_like)}С°
                         </p>
                       </div>
-                      <button className="flex-none flex items-center justify-center w-9 h-9 rounded-md text-slate-300 border border-slate-200" type="button" aria-label="Like">
-                        <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-                          <path fillRule="evenodd" clipRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-                        </svg>
-                      </button>
+                      <div className="flex-none flex items-center justify-center w-9 h-9">
+                        <img src={`/animated/day.svg`} width="50" height="50" alt="SVG animation"/>
+                      </div>
                     </div>
                     <p className="text-sm text-slate-700">
                       Направление ветра: {data.wind.deg}°

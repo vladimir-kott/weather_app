@@ -1,6 +1,7 @@
 import React, {useEffect} from "react";
 import LogoAnimated from '../components/elements/logoAnimated'
-//import useMain from '../components/main'
+import { Linkedin, Instagram, Github } from 'react-bootstrap-icons';
+
 
 const NavMenu = (icon) => {
 
@@ -26,18 +27,17 @@ const NavMenu = (icon) => {
 
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
                 <div className="text-sm lg:flex-grow">
-                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    Docs
+                <a href="https://www.linkedin.com/in/vladimir-kott-511268208/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100 mr-4">
+                    <Linkedin size={20}/>
                 </a>
-                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                    Examples
-                </a>
-                <a href="#responsive-header" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-                    Blog
+                <a href="https://www.instagram.com/vladik_kott/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100">
+                    <Instagram size={20}/>
                 </a>
                 </div>
-                <div>
-                <a href="#" className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
+                <div> 
+                    <a href="https://github.com/vladimir-kott/weather_app" target="_blank" className="inline-flex justify-between text-sm px-2 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-gray-100 hover:bg-white mt-4 lg:mt-0">
+                        <Github size={20}/>
+                    </a>
                 </div>
             </div>
         </nav>
