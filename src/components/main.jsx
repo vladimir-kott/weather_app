@@ -24,7 +24,7 @@ const Main = ({city, setCity, data, getData}) => {
       <main className="container mx-auto flex justify-center">
         <div className="">
           {/*<!-- Replace with your content -->*/}
-                <div className="mx-auto py-5 rounded-md my-10 flex justify-center">
+                <div className="mx-auto py-5 rounded-md my-6 flex justify-center">
                   <input
                     type='text'
                     id='city'
@@ -32,11 +32,11 @@ const Main = ({city, setCity, data, getData}) => {
                     onChange={handleChange}
                     value={city}
                     placeholder="Enter your city..."
-                    className="rounded-md border-2 border-indigo-200 border-b-indigo-500 p-1 mr-2"
+                    className="text-lg text-slate-500 rounded-md border-2 border-slate-300 p-1 mr-2 focus:outline-none"
                   ></input>
                   <button
                     onClick={handleClick}
-                    className="rounded-md border-2 border-sky-500 p-1"
+                    className="rounded-md border-2 border-slate-300 p-1 text-slate-500 hover:bg-slate-200"
                   >
                     Поиск
                   </button>

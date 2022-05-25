@@ -3,6 +3,7 @@ import configFile from "./config.json";
 import NavMenu from "./components/navMenu";
 import Main from "./components/main";
 import Preloader from "./components/elements/preloader";
+import Footer from "./components/footer";
 
 function App() {
   const [city, setCity] = useState('Київ')
@@ -36,6 +37,7 @@ function App() {
       {data ? (<>
         <NavMenu data={data.weather[0].icon}/>
         <Main city={city} setCity={setCity} data={data} getData={getData}/>
+        <Footer/>
       </>) : (<Preloader />)
       }
     </div>

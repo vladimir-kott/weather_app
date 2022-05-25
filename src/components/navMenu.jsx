@@ -21,7 +21,9 @@ const NavMenu = (icon) => {
         <nav className="flex items-center justify-between flex-wrap p-3 bg-slate-300 shadow-md">
             <div className="flex items-center flex-shrink-0 mr-6 text-white">
                 <LogoAnimated icon={icon}/>
-                <span className="font-semibold text-xl">Weather API</span>
+                <a href="https://github.com/vladimir-kott/weather_app" target="_blank">
+                    <span className="font-semibold text-xl">Weather API</span>
+                </a>
             </div>
 
             <div className="block lg:hidden">
