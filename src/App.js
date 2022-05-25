@@ -12,6 +12,8 @@ function App() {
 
   const serverApi = configFile.apiEndpoint + `units=metric&q=${city}&lang=ru&appid=${process.env.REACT_APP_WEATHER_KEY}`
 
+  //console.log('process.env.REACT_APP_WEATHER_KEY', process.env.REACT_APP_WEATHER_KEY)
+
   async function getData() {
 
     const response = await fetch(serverApi, {

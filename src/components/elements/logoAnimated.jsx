@@ -8,7 +8,7 @@ const LogoAnimated = ({icon}) => {
         setCurrentImg(setNameSVG(icon.data))
     }, [])
 
-    return (<img src={`/animated/${currentImg}.svg`} width="50" height="50" alt="SVG animation"/>)
+    return (<img src={`animated/${currentImg}.svg`} width="50" height="50" alt="SVG animation"/>)
     
 }
 
