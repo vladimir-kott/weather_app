@@ -73,7 +73,7 @@ const Main = ({city, setCity, data, getData}) => {
                         </p>
                       </div>
                       <div className="flex-none flex items-center justify-center w-9 h-9">
-                        <img src={`animated/${currentImg}.svg`} width="50" height="50" alt="SVG animation"/>
+                        <img src={process.env.PUBLIC_URL + `/animated/${currentImg}.svg`} width="50" height="50" alt="SVG animation"/>
                       </div>
                     </div>
                     <p className="text-sm text-slate-700">
