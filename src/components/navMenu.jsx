@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import LogoAnimated from '../components/elements/logoAnimated'
-import { Linkedin, Instagram, Github } from 'react-bootstrap-icons';
+import { Linkedin, Instagram, Github, Twitter } from 'react-bootstrap-icons';
 
 
 const NavMenu = (icon) => {
@@ -39,8 +39,11 @@ const NavMenu = (icon) => {
                 <a href="https://www.linkedin.com/in/vladimir-kott-511268208/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100 mr-4">
                     <Linkedin size={20}/>
                 </a>
-                <a href="https://www.instagram.com/vladik_kott/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100">
+                <a href="https://www.instagram.com/vladik_kott/" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100 mr-4">
                     <Instagram size={20}/>
+                </a>
+                <a href="https://twitter.com/Vladimi75679813" target="_blank" className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-gray-100">
+                    <Twitter size={20}/>
                 </a>
                 </div>
                 <div> 
